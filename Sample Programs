@@ -1,0 +1,85 @@
+#MATRIX ADDITION,MUTIPLICATION,TRANSPOSE
+
+package Assessment;
+import java.util.Scanner;
+public class AddMatrix {
+    public static void main(String args[]){
+        Scanner s=new Scanner(System.in);
+        System.out.println("enter the first arrays values:");
+        System.out.println("enter the rows:");
+        int row=s.nextInt();
+        System.out.println("enter the colunms:");
+        int col=s.nextInt();
+        int a[][]=new int[row][col];
+        System.out.println("enter the input:");
+        for(int i=0;i<row;i++){
+            for(int j=0;j<col;j++){
+                a[i][j]=s.nextInt();
+            }
+        }
+        for(int i=0;i<row;i++){
+            for(int j=0;j<col;j++){
+               System.out.print(a[i][j]+" ");
+            }
+            System.out.println();
+        }
+        System.out.println("enter the second arrays values:");
+        System.out.println("enter the rows:");
+        int row1=s.nextInt();
+        System.out.println("enter the colunms:");
+        int col1=s.nextInt();
+        int b[][]=new int[row1][col1];
+        System.out.println("enter the inputs:");
+        for(int i=0;i<row1;i++){
+            for(int j=0;j<col1;j++){
+                b[i][j]=s.nextInt();
+            }
+        }
+        for(int i=0;i<row1;i++){
+            for(int j=0;j<col1;j++){
+                System.out.print(b[i][j]+" ");
+            }
+            System.out.println();
+        }
+        int sum[][]=new int[a.length][b.length];
+        for(int i=0;i<a.length;i++){
+            for(int j=0;j<b.length;j++){
+                sum[i][j]=a[i][j]+b[i][j];
+            }
+        }
+        System.out.println("the addition of matrix is :");
+        for(int i=0;i<row1;i++){
+            for(int j=0;j<col1;j++){
+                System.out.print(sum[i][j]+" ");
+            }
+            System.out.println();
+        }
+        int mul[][]=new int[a.length][b.length];
+        for(int i=0;i<a.length;i++){
+            for(int j=0;j<b.length;j++){
+                mul[i][j]=a[i][j]*b[i][j];
+            }
+        }
+        System.out.println("the multiplication of matrix is :");
+        for(int i=0;i<a.length;i++){
+            for(int j=0;j<b.length;j++){
+                System.out.print(mul[i][j]+" ");
+            }
+            System.out.println();
+        }
+        System.out.println("transpose matrix of A:");
+        int trans[][]=new int[row][col];
+        System.out.println("enter the input:");
+        for(int i=0;i<row;i++){
+            for(int j=0;j<col;j++){
+                trans[j][i]=a[i][j];
+            }
+        }
+        for(int i=0;i<row;i++){
+            for(int j=0;j<col;j++){
+                System.out.print(trans[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+}
