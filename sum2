@@ -1,0 +1,40 @@
+#find sum the sum of diagonal elements
+
+package Assessment;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Diagonal {
+    public static void main(String []args){
+        Scanner s=new Scanner(System.in);
+        System.out.println("enter the rows:");
+        int row=s.nextInt();
+        System.out.println("enter the colunms:");
+        int col=s.nextInt();
+        int a[][]=new int[row][col];
+        System.out.println("enter the values:");
+        for(int i=0;i<row;i++){
+            for(int j=0;j<col;j++){
+                a[i][j]=s.nextInt();
+            }
+        }
+        System.out.println("the elements of the matrix: ");
+        for(int i=0;i<row;i++){
+            for(int j=0;j<col;j++){
+              System.out.print(a[i][j]+" ");
+            }
+            System.out.println();
+        }
+        int sum=0;
+        for(int i=0;i<row;i++){
+            for(int j=0;j<col;j++){
+                if(i==j){
+                    sum=sum+a[i][j];
+                }
+            }
+
+        }
+        System.out.println("sum of diagonal values is:"+sum);
+    }
+}
