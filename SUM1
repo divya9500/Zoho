@@ -1,0 +1,47 @@
+#ARRAY ROTATIONS
+
+package Assessment;
+
+import java.util.Scanner;
+
+public class Rotate {
+    public static void main(String args[]){
+        int arr[]={1,2,3,4,5};
+        Scanner s=new Scanner(System.in);
+        System.out.println("enter the number of times an array should be rotated:");
+        int n=s.nextInt();
+        System.out.println("oringinal Array: ");
+        for(int i=0;i<arr.length;i++){
+            System.out.print(arr[i]+" ");
+        }
+        for(int i=0;i<n;i++) {
+            int  last;
+            last = arr[arr.length - 1];
+
+            for (int j = arr.length - 1; j > 0; j--) {
+                arr[j] = arr[j - 1];
+            }
+            arr[0] = last;
+        }
+        System.out.println("Array after right rotation: ");
+        for(int i=0;i<arr.length;i++){
+            System.out.print(arr[i]+" ");
+        }
+
+        System.out.println("enter the number of times rotate in left :");
+        int n1=s.nextInt();
+        for(int i=0;i<n1;i++){
+            int first,j;
+            first=arr[0];
+
+            for( j=0;j<arr.length-1;j++){
+                arr[j]=arr[j+1];
+            }
+            arr[j]=first;
+        }
+        System.out.println("Array after left rotation: ");
+        for(int i=0;i<arr.length;i++){
+            System.out.print(arr[i]+" ");
+        }
+    }
+}
